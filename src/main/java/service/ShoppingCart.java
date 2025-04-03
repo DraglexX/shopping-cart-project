@@ -21,11 +21,11 @@ public class ShoppingCart {
     public double getTotalPriceWithDiscount() {
         double total = 0;
         for (Food item : items) {
-            double discount = (item instanceof Discountable) ? ((Discountable) item).getDiscount() : 0;
-            total += item.getTotalPrice() * (1 - discount / 100);
+            total += item.getTotalPrice() * (1 - item.getDiscount() / 100);
         }
         return total;
     }
+
 
     public double getVegetarianTotalPrice() {
         double total = 0;
